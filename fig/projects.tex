@@ -10,10 +10,12 @@ footskip=.25in]{geometry}
 
 \usepackage{graphicx}
 \usepackage{makecell}
+\usepackage{subcaption}
+\usepackage{xcolor}
 %================================
 
 \newlength{\resLen}
-\setlength{\resLen}{1.7in}
+\setlength{\resLen}{0.185\textwidth}
 
 \begin{document}
 		
@@ -21,48 +23,178 @@ footskip=.25in]{geometry}
 	\newgeometry{left=0.35in,right=0.35in,top=0.5in,bottom=0.5in}
 
 	\begin{center}
-		\LARGE\textbf{Previous Projects (main contribution)}
+		\large{Previous Projects}
 	\end{center}
-	
-	\Large\textbf{Tencent America:}
-	\begin{figure}[h]
-		\textbf{
-		\begin{tabular}{p{\resLen}p{\resLen}p{\resLen}p{\resLen}}
-			\includegraphics[height=\resLen]{snow.jpg} &
-			\includegraphics[height=\resLen]{delight.jpg} &
-			\includegraphics[height=\resLen]{realitybooth.jpg} &
-			\includegraphics[height=\resLen]{genshin.png} \\
-			- UE5 plugin               & - Photogrammetry  & - Image generation & - Cartoon stylization \\
-			- Snow rendering & - Texture delighting             & - Diffusion models & - Stable Diffusion \\
-			- Multiple scattering &  - Shadow removal  & - Relighting & - Video stabilization
-		\end{tabular}}
-	\end{figure}
 
-	\Large\textbf{PhD:}
 	\begin{figure}[h]
-		\textbf{
-		\begin{tabular}{p{\resLen}p{\resLen}p{\resLen}p{\resLen}}
+        \begin{subfigure}[t]{0.5\textwidth}
+        \scriptsize
+		\begin{tabular}{p{0.9\resLen}p{0.9\resLen}p{0.9\resLen}}
+            \multicolumn{3}{l}{\small\textbf{Rendering:}} \\[2pt]
 			\includegraphics[height=\resLen]{layer.jpg} &
 			\includegraphics[height=\resLen]{waveoptics.jpg} &
-			\includegraphics[height=\resLen]{materiangan.jpg} &
-			\includegraphics[height=\resLen]{bayesian.jpg} \\
-			- Forward rendering & - Volume rendering & - Inverse-rendering & - \small{Procedural material} \\
-			- Layered BSDF        & - Wave optics                            & - SVBRDF                  & - Bayesian theory \\
-			- PBRT-v4                 &                                                     & - MaterialGAN           & - MCMC sampling
-		\end{tabular}}
-	\end{figure}
-	
-	\Large\textbf{Human face related:}
-	\begin{figure}[h]
-		\textbf{
-		\begin{tabular}{p{\resLen}p{\resLen}p{\resLen}}
-			\includegraphics[height=\resLen]{glasses.jpg} &
+			\includegraphics[height=\resLen]{snow.jpg}
+			  \\
+			\makecell[l]{- BSDF\\- Layered surface\\- PBRT v4} &
+            \makecell[l]{- Wave optics\\\textcolor{white}{-} \\\textcolor{white}{-}} &
+            \makecell[l]{- UE plugin\\- Snow rendering\\- Multiple scattering}
+		\end{tabular}
+        \end{subfigure}
+        \hspace{1pt}
+        \begin{subfigure}[t]{0.5\textwidth}
+        \scriptsize
+		\begin{tabular}{p{0.9\resLen}p{0.9\resLen}p{0.9\resLen}}
+            \multicolumn{3}{l}{\small\textbf{Inverse Rendering:}} \\[2pt]
+			\includegraphics[height=\resLen]{materialgan.jpg} &
+			\includegraphics[height=\resLen]{delight.jpg} &
+			\includegraphics[height=\resLen]{sirr.jpg}
+			  \\
+			\makecell[l]{- Material recovery\\\textcolor{white}{-}\\\textcolor{white}{-}} &
+            \makecell[l]{- Photogrammetry\\- Shadow removal\\\textcolor{white}{-}} & 
+            \makecell[l]{- Reflection removal\\- Reflection Separation\\\textcolor{white}{-}}
+		\end{tabular}
+        \end{subfigure}
+        
+        \vspace{12pt}
+        
+        \begin{subfigure}[t]{0.5\textwidth}
+        \scriptsize
+		\begin{tabular}{p{0.9\resLen}p{0.9\resLen}p{0.9\resLen}}
+            \multicolumn{3}{l}{\small\textbf{PBR material:}} \\[2pt]
+			\includegraphics[height=\resLen]{materialgan.jpg} &
+			\includegraphics[height=\resLen]{bayesian.jpg} &
+			  \includegraphics[height=\resLen]{epbr.jpg} 
+			\\
+			\makecell[l]{- SVBRDF\\- MaterialGAN\\\textcolor{white}{-}} &
+            \makecell[l]{- Procedual material\\- MCMC\\\textcolor{white}{-}} &
+            \makecell[l]{- Extented PBR\\- Mirror surface\\- Transparent surface}
+		\end{tabular}
+        \end{subfigure}
+        \hspace{1pt}
+        \begin{subfigure}[t]{0.5\textwidth}
+        \scriptsize
+		\begin{tabular}{p{0.9\resLen}p{0.9\resLen}p{0.9\resLen}}
+            \multicolumn{3}{l}{\small\textbf{Delighting and relighting:}} \\[2pt]
+			\includegraphics[height=\resLen]{realitybooth.jpg} &
 			\includegraphics[height=\resLen]{face.jpg} &
-			\includegraphics[height=\resLen]{eye.jpg} \\
-			- Virtual try-on             & - Face relighting  & - Eye rendering \\
-			- Prescription glasses & - Face rendering  & - Eye reconstruction \\
-		\end{tabular}}
-	\end{figure}
+			\includegraphics[height=\resLen]{bigs.jpg}
+			  \\
+			\makecell[l]{- Consumer goods\\- Image based\\\textcolor{white}{-}} & 
+            \makecell[l]{- Human face\\- Mesh based\\\textcolor{white}{-}} &
+            \makecell[l]{- Translucent object\\- 3DGS based\\\textcolor{white}{-}}
+		\end{tabular}
+        \end{subfigure}
+
+        \vspace{12pt}
+        
+        \begin{subfigure}[t]{0.5\textwidth}
+        \scriptsize
+		\begin{tabular}{p{0.9\resLen}p{0.9\resLen}p{0.9\resLen}}
+            \multicolumn{3}{l}{\small\textbf{Generative AI:}} \\[2pt]
+			\includegraphics[height=\resLen]{realitybooth.jpg} &
+			\includegraphics[height=\resLen]{sirr.jpg} &
+			\includegraphics[height=\resLen]{water.jpg}
+			  \\
+			\makecell[l]{- Stable Diffusion\\- Fine-tuning\\- Dreambooth} &
+            \makecell[l]{- Flux.1 Kontext\\- Fine-tuning\\- LoRA} & 
+            \makecell[l]{- Video Generation\\- Diffusion model\\\textcolor{white}{-}}
+		\end{tabular}
+        \end{subfigure}
+        \hspace{1pt}
+        \begin{subfigure}[t]{0.5\textwidth}
+        \scriptsize
+		\begin{tabular}{p{0.9\resLen}p{0.9\resLen}p{0.9\resLen}}
+            \multicolumn{3}{l}{\small\textbf{3DGS:}} \\[2pt]
+			\includegraphics[height=\resLen]{snapgs.jpg} &
+			\includegraphics[height=\resLen]{bigs.jpg} &
+			% \includegraphics[height=\resLen]{realitybooth.jpg}
+			  \\
+			\makecell[l]{- Tiny object\\\textcolor{white}{-}\\\textcolor{white}{-}} &
+            \makecell[l]{- Translucent object\\\textcolor{white}{-}\\\textcolor{white}{-}} &
+            % \makecell[l]{- Tiny object\\\textcolor{white}{-}\\\textcolor{white}{-}}
+		\end{tabular}
+        \end{subfigure}
+
+        \vspace{12pt}
+        
+        \begin{subfigure}[t]{0.5\textwidth}
+        \scriptsize
+		\begin{tabular}{p{0.9\resLen}p{0.9\resLen}p{0.9\resLen}}
+            \multicolumn{3}{l}{\small\textbf{Data collection:}} \\[2pt]
+			\includegraphics[height=\resLen]{synth.jpg} &
+			\includegraphics[height=\resLen]{phone.png} &
+			\includegraphics[height=\resLen]{ls.jpg}
+			  \\
+			\makecell[l]{- Synthetic data\\\textcolor{white}{-}\\\textcolor{white}{-}} &
+			\makecell[l]{- Portable device\\\textcolor{white}{-}\\\textcolor{white}{-}} &
+			\makecell[l]{- Light stage\\\textcolor{white}{-}\\\textcolor{white}{-}} 
+		\end{tabular}
+        \end{subfigure}
+  %       \hspace{1pt}
+  %       \begin{subfigure}[t]{0.5\textwidth}
+  %       \scriptsize
+		% \begin{tabular}{p{0.9\resLen}p{0.9\resLen}p{0.9\resLen}}
+  %           \multicolumn{3}{l}{\small\textbf{Others:}} \\[2pt]
+		% 	\includegraphics[height=\resLen]{snow.jpg} &
+		% 	\includegraphics[height=\resLen]{delight.jpg} &
+		% 	\includegraphics[height=\resLen]{realitybooth.jpg}
+		% 	  \\
+		% 	\makecell[l]{- UE5 plugin\\- Snow rendering\\- Multiple scattering} & & 
+		% \end{tabular}
+  %       \end{subfigure}
+    \end{figure}
+
+	% \begin{figure}[t]
+ %        \scriptsize
+	% 	\begin{tabular}{p{\resLen}p{\resLen}p{\resLen}p{\resLen}}
+ %            \small{Rendering:} & & & \\[2pt]
+	% 		\includegraphics[height=\resLen]{snow.jpg} &
+	% 		\includegraphics[height=\resLen]{delight.jpg} &
+	% 		\includegraphics[height=\resLen]{realitybooth.jpg} &
+	% 		  \\
+	% 		\makecell[l]{- UE5 plugin\\- Snow rendering\\- Multiple scattering} & & & \\
+	% 	\end{tabular}
+	% \end{figure}
+    
+	% \Large\textbf{Tencent America:}
+	% \begin{figure}[t]
+	% 	\textbf{
+	% 	\begin{tabular}{p{\resLen}p{\resLen}p{\resLen}p{\resLen}}
+	% 		\includegraphics[height=\resLen]{snow.jpg} &
+	% 		\includegraphics[height=\resLen]{delight.jpg} &
+	% 		\includegraphics[height=\resLen]{realitybooth.jpg} &
+	% 		\includegraphics[height=\resLen]{genshin.png} \\
+	% 		- UE5 plugin               & - Photogrammetry  & - Image generation & - Cartoon stylization \\
+	% 		- Snow rendering & - Texture delighting             & - Diffusion models & - Stable Diffusion \\
+	% 		- Multiple scattering &  - Shadow removal  & - Relighting & - Video stabilization
+	% 	\end{tabular}}
+	% \end{figure}
+
+	% \Large\textbf{PhD:}
+	% \begin{figure}[t]
+	% 	\textbf{
+	% 	\begin{tabular}{p{\resLen}p{\resLen}p{\resLen}p{\resLen}}
+	% 		\includegraphics[height=\resLen]{layer.jpg} &
+	% 		\includegraphics[height=\resLen]{waveoptics.jpg} &
+	% 		\includegraphics[height=\resLen]{materiangan.jpg} &
+	% 		\includegraphics[height=\resLen]{bayesian.jpg} \\
+	% 		- Forward rendering & - Volume rendering & - Inverse-rendering & - \small{Procedural material} \\
+	% 		- Layered BSDF        & - Wave optics                            & - SVBRDF                  & - Bayesian theory \\
+	% 		- PBRT-v4                 &                                                     & - MaterialGAN           & - MCMC sampling
+	% 	\end{tabular}}
+	% \end{figure}
+	
+	% \Large\textbf{Human face related:}
+	% \begin{figure}[t]
+	% 	\textbf{
+	% 	\begin{tabular}{p{\resLen}p{\resLen}p{\resLen}}
+	% 		\includegraphics[height=\resLen]{glasses.jpg} &
+	% 		\includegraphics[height=\resLen]{face.jpg} &
+	% 		\includegraphics[height=\resLen]{eye.jpg} \\
+	% 		- Virtual try-on             & - Face relighting  & - Eye rendering \\
+	% 		- Prescription glasses & - Face rendering  & - Eye reconstruction \\
+	% 	\end{tabular}}
+	% \end{figure}
 	
 	%to restore old margins, use
 	\restoregeometry
